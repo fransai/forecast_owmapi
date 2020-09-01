@@ -1,15 +1,8 @@
-var x = document.getElementById("display-latlong-coordinates");
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+function lat_long(position) {
+  var lat = position.coords.latitude;
+  console.log(`Latitude : ${lat}`);
+  var long = position.coords.longitude;
+  console.log(`Longitude : ${long}`);
 }
 
-function showPosition(position) {
-    console.log("userLatitude " + position.coords.latitude);
-    console.log("userLongitude " + position.coords.longitude);
-}
-
-getLocation();
+navigator.geolocation.getCurrentPosition(lat_long);
