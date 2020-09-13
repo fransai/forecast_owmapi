@@ -21,7 +21,7 @@ $(document).ready(function () {
       }
     };
 
-    xhr.open("GET", "https://api.openweathermap.org/data/2.5/forecast?lat="+currLat+"&lon="+currLong+"&appid="+apiKey);
+    xhr.open("GET", "https://api.openweathermap.org/data/2.5/forecast?lat="+currLat+"&lon="+currLong+"&units=metric"+"&appid="+apiKey);
     xhr.send();
 
     function setWeather(jsonWeather) {
@@ -35,6 +35,8 @@ $(document).ready(function () {
       var sunset = jsonWeather.city.sunset;
       var hum_sunset = new Date(1000*sunset)
       $("#sunset").html(hum_sunset);
+      $("#clouds").html((jsonWeather.list[0].clouds.all) + "% - " + "\""+ (jsonWeather.list[0].weather[0].description) + "\"");
+      $("#feelsLike").html((jsonWeather.list[0].main.feels_like) + "&deg;C");
 
     }
   }
