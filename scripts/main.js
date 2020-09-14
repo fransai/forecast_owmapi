@@ -52,5 +52,56 @@ $(document).ready(function () {
       } else {
       console.log("Woah")
       }
+  
+  //Breaking to the search functionality
 
+  var city = ""
+
+      $("#getForecast").click(function(){
+        city = $("#city").val();
+
+
+        var xhr = new XMLHttpRequest();
+      var weather;
+  
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            setWeather(JSON.parse(this.responseText));
+        }
+      };
+  
+      xhr.open("GET", "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=metric"+"&appid="+apiKey);
+      xhr.send();
+      
+      function setWeather(jsonWeather) {
+        weather = jsonWeather;
+        console.log(jsonWeather);
+        $("#searchCityName").html((jsonWeather.city.country) + ", " + (jsonWeather.city.name));
+        var sunrise = jsonWeather.city.sunrise;
+        var hum_sunrise = new Date(1000*sunrise)
+        $("#searchSunrise").html(hum_sunrise);
+        var sunset = jsonWeather.city.sunset;
+        var hum_sunset = new Date(1000*sunset)
+        $("#searchSunset").html(hum_sunset);
+        $("#searchClouds").html((jsonWeather.list[0].clouds.all) + "% - " + "\""+ (jsonWeather.list[0].weather[0].description) + "\"");
+        $("#searchFeelsLike").html((jsonWeather.list[0].main.feels_like) + "&deg;C");
+
+        $("#searchCityNameTom").html((jsonWeather.city.country) + ", " + (jsonWeather.city.name));
+        var sunrise = jsonWeather.city.sunrise;
+        var hum_sunrise = new Date(1000*sunrise)
+        $("#searchSunriseTom").html(hum_sunrise);
+        var sunset = jsonWeather.city.sunset;
+        var hum_sunset = new Date(1000*sunset)
+        $("#searchSunsetTom").html(hum_sunset);
+        $("#searchCloudsTom").html((jsonWeather.list[8].clouds.all) + "% - " + "\""+ (jsonWeather.list[8].weather[0].description) + "\"");
+        $("#searchFeelsLikeTom").html((jsonWeather.list[8].main.feels_like) + "&deg;C");
+  
+      }
+        
+
+      
+      });
+  
+      
 });
+
