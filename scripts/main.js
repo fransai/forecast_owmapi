@@ -86,7 +86,7 @@ $(document).ready(function () {
         $("#searchClouds").html((jsonWeather.list[0].clouds.all) + "% - " + "\""+ (jsonWeather.list[0].weather[0].description) + "\"");
         $("#searchFeelsLike").html((jsonWeather.list[0].main.feels_like) + "&deg;C");
 
-        $("#tomorrowPlus1").html(jsonWeather.list[8].dt_txt);
+        $("#todayPlus1").html(jsonWeather.list[8].dt_txt);
         $("#searchCityNameTom").html((jsonWeather.city.country) + ", " + (jsonWeather.city.name));
         $("#searchCloudsTom").html((jsonWeather.list[8].clouds.all) + "% - " + "\""+ (jsonWeather.list[8].weather[0].description) + "\"");
         $("#searchHumidityTom").html((jsonWeather.list[8].main.humidity) + "&percnt;");
