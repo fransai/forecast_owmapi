@@ -28,7 +28,6 @@ $(document).ready(function () {
       weather = jsonWeather;
       console.log(jsonWeather);
       $("#city-name").html((jsonWeather.city.country) + ", " + (jsonWeather.city.name));
-      $("#population").html(jsonWeather.city.population);
       var sunrise = jsonWeather.city.sunrise;
       var hum_sunrise = new Date(1000*sunrise)
       $("#sunrise").html(hum_sunrise);
@@ -45,10 +44,11 @@ $(document).ready(function () {
 
   var ultLoc = document.getElementById("city-name").innerText;
       if (ultLoc == ""){
-        $("#city-name").html("Location N/A");
-        $("#population").html("Population N/A");
-        $("#sunrise").html("Sunrise N/A");
-        $("#sunset").html("Sunset N/A");
+        $("#city-name").html("Location Request Denied");
+        $("#sunrise").html("Location Request Denied");
+        $("#sunset").html("Location Request Denied");
+        $("#clouds").html("Location Request Denied");
+        $("#feelsLike").html("Location Request Denied");
       } else {
       console.log("Woah")
       }
@@ -86,14 +86,10 @@ $(document).ready(function () {
         $("#searchClouds").html((jsonWeather.list[0].clouds.all) + "% - " + "\""+ (jsonWeather.list[0].weather[0].description) + "\"");
         $("#searchFeelsLike").html((jsonWeather.list[0].main.feels_like) + "&deg;C");
 
+        $("#tomorrowPlus1").html(jsonWeather.list[8].dt_txt);
         $("#searchCityNameTom").html((jsonWeather.city.country) + ", " + (jsonWeather.city.name));
-        var sunrise = jsonWeather.city.sunrise;
-        var hum_sunrise = new Date(1000*sunrise)
-        $("#searchSunriseTom").html(hum_sunrise);
-        var sunset = jsonWeather.city.sunset;
-        var hum_sunset = new Date(1000*sunset)
-        $("#searchSunsetTom").html(hum_sunset);
         $("#searchCloudsTom").html((jsonWeather.list[8].clouds.all) + "% - " + "\""+ (jsonWeather.list[8].weather[0].description) + "\"");
+        $("#searchHumidityTom").html((jsonWeather.list[8].main.humidity) + "&percnt;");
         $("#searchFeelsLikeTom").html((jsonWeather.list[8].main.feels_like) + "&deg;C");
   
       }
