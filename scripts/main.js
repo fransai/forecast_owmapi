@@ -113,12 +113,6 @@ $(document).ready(function () {
       //$("#timestamp").html(humNexttime);
       $("#timestamp").html(jsonWeather.list[0].dt_txt);
       $("#searchCityName").html((jsonWeather.city.country) + ", " + (jsonWeather.city.name));
-      var sunrise = jsonWeather.city.sunrise;
-      var hum_sunrise = new Date(1000 * sunrise)
-      $("#searchSunrise").html(hum_sunrise);
-      var sunset = jsonWeather.city.sunset;
-      var hum_sunset = new Date(1000 * sunset)
-      $("#searchSunset").html(hum_sunset);
       $("#searchClouds").html((jsonWeather.list[0].clouds.all) + "% - " + "\"" + (jsonWeather.list[0].weather[0].description) + "\"");
       $("#cloudsPic").attr("src", `http://openweathermap.org/img/wn/${(jsonWeather.list[0].weather[0].icon)}@2x.png`)
       $("#searchFeelsLike").html((jsonWeather.list[0].main.feels_like) + "&deg;C");
