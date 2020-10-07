@@ -1,6 +1,38 @@
 $(document).ready(function () {
   const apiKey = "d969704309dc87d01c3d23aab084f680";
 
+  /*
+  var todaysDay = ""
+  function getDayofweek(){
+    var d = new Date();
+    var today = d.getDay()
+    if (today == 1){
+      todaysDay = "Monday"
+    } 
+    else if (today == 2){
+      todaysDay = "Tuesday"
+    }
+    else if (today == 3){
+      todaysDay = "Wednesday"
+    }
+    else if (today == 4){
+      todaysDay = "Thursday"
+    }
+    else if (today == 5){
+      todaysDay = "Friday"
+    }
+    else if (today == 6){
+      todaysDay = "Saturday"
+    }
+    else{
+      todaysDay = "Sunday"
+    }
+    return todaysDay
+  }
+  const dayofweek = getDayofweek();
+  console.log(dayofweek);
+  */
+ 
   function lat_long(position) {
 
     //add an if statement to make the below p1 work and if that doesnt work, make p2 work with some "Location Denied Messages"
@@ -45,27 +77,20 @@ $(document).ready(function () {
 
   var ultLoc = document.getElementById("city-name").innerText;
   if (ultLoc == "") {
-    $("#city-name").html("Location Request Denied");
-    $("#sunrise").html("Location Request Denied");
-    $("#sunset").html("Location Request Denied");
-    $("#clouds").html("Location Request Denied");
-    $("#feelsLike").html("Location Request Denied");
+    $("#city-name").html("Location Request Unavailable");
+    $("#sunrise").html("Location Request Unavailable");
+    $("#sunset").html("Location Request Unavailable");
+    $("#clouds").html("Location Request Unavailable");
+    $("#feelsLike").html("Location Request Unavailable");
   } else {
     console.log("Woah")
   }
 
   //Breaking to the search functionality
-
   var city = ""
 
   $("#getForecast").click(function () {
     city = $("#city").val();
-    $("#currentDay").html(function(){
-      //var daysOfweek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-      var d = new Date();
-      var today = d.getDay();
-      return today;
-    })
 
     var xhr = new XMLHttpRequest();
     var weather;
