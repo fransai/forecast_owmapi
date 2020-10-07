@@ -119,7 +119,6 @@ $(document).ready(function () {
       var sunset = jsonWeather.city.sunset;
       var hum_sunset = new Date(1000 * sunset)
       $("#searchSunset").html(hum_sunset);
-      $("#timeNowtoday").html(jsonWeather.list[0].dt_txt);
       $("#searchClouds").html((jsonWeather.list[0].clouds.all) + "% - " + "\"" + (jsonWeather.list[0].weather[0].description) + "\"");
       $("#cloudsPic").attr("src", `http://openweathermap.org/img/wn/${(jsonWeather.list[0].weather[0].icon)}@2x.png`)
       $("#searchFeelsLike").html((jsonWeather.list[0].main.feels_like) + "&deg;C");
@@ -137,7 +136,6 @@ $(document).ready(function () {
       var sunset = jsonWeather.city.sunset;
       var hum_sunset = new Date(1000 * sunset)
       $("#searchSunset1").html(hum_sunset);
-      $("#timeNowtoday1").html(jsonWeather.list[1].dt_txt);
       $("#searchClouds1").html((jsonWeather.list[1].clouds.all) + "% - " + "\"" + (jsonWeather.list[1].weather[0].description) + "\"");
       $("#cloudsPic1").attr("src", `http://openweathermap.org/img/wn/${(jsonWeather.list[1].weather[0].icon)}@2x.png`)
       $("#searchFeelsLike1").html((jsonWeather.list[1].main.feels_like) + "&deg;C");
