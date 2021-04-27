@@ -87,24 +87,6 @@ $(document).ready(function () {
       $("#searchTemp").html((jsonWeather.list[0].main.temp) + "&deg;C");
       $("#searchTempmin").html((jsonWeather.list[0].main.temp_min) + "&deg;C");
       $("#searchTempmax").html((jsonWeather.list[0].main.temp_max) + "&deg;C");
-/*
-      var nextTime1 = jsonWeather.list[1].dt
-      var humNexttime1 = new Date(1000 * nextTime1);
-      $("#timestamp1").html(humNexttime1);
-      $("#searchCityName1").html((jsonWeather.city.country) + ", " + (jsonWeather.city.name));
-      var sunrise = jsonWeather.city.sunrise;
-      var hum_sunrise = new Date(1000 * sunrise)
-      $("#searchSunrise1").html(hum_sunrise);
-      var sunset = jsonWeather.city.sunset;
-      var hum_sunset = new Date(1000 * sunset)
-      $("#searchSunset1").html(hum_sunset);
-      $("#searchClouds1").html((jsonWeather.list[1].clouds.all) + "% - " + "\"" + (jsonWeather.list[1].weather[0].description) + "\"");
-      $("#cloudsPic1").attr("src", `http://openweathermap.org/img/wn/${(jsonWeather.list[1].weather[0].icon)}@2x.png`)
-      $("#searchFeelsLike1").html((jsonWeather.list[1].main.feels_like) + "&deg;C");
-      $("#searchTemp1").html((jsonWeather.list[1].main.temp) + "&deg;C");
-      $("#searchTempmin1").html((jsonWeather.list[1].main.temp_min) + "&deg;C");
-      $("#searchTempmax1").html((jsonWeather.list[1].main.temp_max) + "&deg;C");
-*/
     }
   });
 });
