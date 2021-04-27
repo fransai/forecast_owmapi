@@ -1,38 +1,6 @@
 $(document).ready(function () {
   const apiKey = "d969704309dc87d01c3d23aab084f680";
 
-  /*
-  var todaysDay = ""
-  function getDayofweek(){
-    var d = new Date();
-    var today = d.getDay()
-    if (today == 1){
-      todaysDay = "Monday"
-    } 
-    else if (today == 2){
-      todaysDay = "Tuesday"
-    }
-    else if (today == 3){
-      todaysDay = "Wednesday"
-    }
-    else if (today == 4){
-      todaysDay = "Thursday"
-    }
-    else if (today == 5){
-      todaysDay = "Friday"
-    }
-    else if (today == 6){
-      todaysDay = "Saturday"
-    }
-    else{
-      todaysDay = "Sunday"
-    }
-    return todaysDay
-  }
-  const dayofweek = getDayofweek();
-  console.log(dayofweek);
-  */
-
   function lat_long(position) {
 
     //add an if statement to make the below p1 work and if that doesnt work, make p2 work with some "Location Denied Messages"
