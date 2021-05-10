@@ -4,6 +4,7 @@ $(document).ready(function () {
   function lat_long(position) {
 
     //add an if statement to make the below p1 work and if that doesnt work, make p2 work with some "Location Denied Messages"
+    //new line
 
     var currLat = String(position.coords.latitude);
     console.log(`Lattitude : ${currLat}`);
